@@ -32,15 +32,6 @@ class IMEC {
 		return($mysqli->insert_id);
 	}
 
-    function InsertNoti($userid,$id_noti){
-		  require("conexion.php");
-		
-	  $SQLI="INSERT INTO `notificaciones_mensajes` ( `id_noti_men`, `usr`) VALUES ('$id_noti', '$userid')";
-
-			$mysqli->query($SQLI);
-		
-		return($mysqli->insert_id);
-	}
 
 	function Consultar($tab,$cond){
 		  require("conexion.php");
@@ -77,8 +68,7 @@ class IMEC {
 	function Eliminar($tabEli,$condEli){
 		  require("conexion.php");
 		if ($condEli=="" || $condEli==null) {
-			// DELETE FROM `tecnicos_asignados` WHERE 0
-		 // $SQLA="DELETE FROM $tabAct";
+		
 		}else{
 		     $SQLE="DELETE FROM $tabEli WHERE($condEli)";
 		}
